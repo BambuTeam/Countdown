@@ -35,9 +35,11 @@
     <!-- Overlay - Global -->
     <div class="overlay overlay-global">
       <div class="overlay-inner bg-image-holder bg-cover">
-        <img src="assets/images/image-1.jpg" alt="">
+        <img src="assets/images/image-4.jpg" alt="background">
       </div>
-      <div class="overlay-inner bg-dark opacity-80"></div>
+      <div class="yt-bg-player" data-property="{videoURL:'http://youtu.be/iXkJmJa4NvE',containment:'#youtube-background',startAt:0,mute:true,autoPlay:true,loop:true,opacity:1}"></div>
+      <div id="youtube-background" class="overlay-inner overlay-video bg-black"></div>
+      <div class="overlay-inner bg-dark opacity-50"></div>
     </div>
 
     <!-- Site navigation -->
@@ -76,7 +78,8 @@
         </ul>
 
         <!-- Button -->
-        <button type="button" class="btn btn-soft-white d-block d-lg-inline-block mb-3 mb-lg-0 ml-lg-3 w-100 w-lg-auto" data-toggle="modal" data-target="#documentationModal" data-navbar-base="btn-soft-white" data-navbar-toggled="btn-soft-secondary" data-navbar-scrolled="btn-soft-secondary">Documentation</button>
+        <button type="button" class="btn btn-soft-white d-none d-lg-inline-block mb-3 mb-lg-0 ml-lg-3" data-toggle="modal" data-target="#documentationModal" data-navbar-base="btn-soft-white" data-navbar-scrolled="btn-soft-secondary">Documentation</button>
+        <button type="button" class="btn btn-soft-secondary d-block d-lg-none mb-3 mb-lg-0 w-100" data-toggle="modal" data-target="#documentationModal">Documentation</button>
 
         <!-- Button -->
         <a class="btn btn-primary d-block d-lg-inline-block ml-lg-3" href="#!">Buy now</a>
@@ -353,9 +356,17 @@
     <script src="assets/vendor/jQuery.countdown/dist/jquery.countdown.min.js"></script>
     <script src="assets/vendor/vegas/vegas.min.js"></script>
     <script src="assets/vendor/granim.js/dist/granim.min.js"></script>
+    <script src="assets/vendor/jquery.mb.YTPlayer/dist/jquery.mb.YTPlayer.min.js"></script>
 
     <!-- Theme JS -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+    // Youtube Background
+    if ($('.yt-bg-player').length > 0) {
+      $('.yt-bg-player').YTPlayer();
+    }
+    </script>
 
   </body>
 </html>
